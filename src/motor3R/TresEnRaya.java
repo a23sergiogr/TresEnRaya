@@ -7,7 +7,7 @@ package motor3R;
  * El tablero se representa con una matriz de 3x3.
  *
  * @author a23SergioGR
- * @version 1.1
+ * @version 1.2
  */
 public class TresEnRaya {
     private short dificultad;
@@ -59,7 +59,9 @@ public class TresEnRaya {
      * @return La matriz que representa el tablero.
      */
     public char[][] getTablero() {
-        return tablero;
+        char[][] copiaTablero = new char[tablero.length][tablero[0].length];
+        copiaTablero = tablero.clone();
+        return copiaTablero;
     }
 
     /**
