@@ -141,6 +141,28 @@ public class TresEnRaya {
         if(setCasilla(1, 1, 'X'))
             return;
 
+        
+        if(tablero[1][1] == 'X') {
+            int random = (int) (Math.random() * 4);
+            switch (random) {
+                case 0:
+                    if(setCasilla(0, 1, 'X'))
+                        return;
+                    break;
+                case 1:
+                    if(setCasilla(1, 0, 'X'))
+                        return;
+                    break;
+                case 2:
+                    if(setCasilla(1, 2, 'X'))
+                        return;
+                    break;
+                case 3:
+                    if(setCasilla(2, 1, 'X'))
+                        return;
+                    break;              
+            }
+        }
         // Poner ficha en una esquina si al lado contrario no hay ficha del jugador
         if (tablero[0][0] == '_' && tablero[2][2] == '_') {
             tablero[2][2] = 'X';
