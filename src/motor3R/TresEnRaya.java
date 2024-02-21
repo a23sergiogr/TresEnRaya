@@ -7,7 +7,7 @@ package motor3R;
  * El tablero se representa con una matriz de 3x3.
  *
  * @author a23SergioGR
- * @version 1.2
+ * @version 1.1
  */
 public class TresEnRaya {
     private short dificultad;
@@ -20,6 +20,7 @@ public class TresEnRaya {
     */
     public TresEnRaya() {
         // Crear e Inicializar tablero
+        dificultad = 1;
         tablero = new char[3][3];
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
@@ -143,7 +144,6 @@ public class TresEnRaya {
         if(setCasilla(1, 1, 'X'))
             return;
 
-        
         if(tablero[1][1] == 'X') {
             int random = (int) (Math.random() * 4);
             switch (random) {
@@ -165,6 +165,7 @@ public class TresEnRaya {
                     break;              
             }
         }
+
         // Poner ficha en una esquina si al lado contrario no hay ficha del jugador
         if (tablero[0][0] == '_' && tablero[2][2] == '_') {
             tablero[2][2] = 'X';
